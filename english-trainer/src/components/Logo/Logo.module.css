@@ -1,0 +1,16 @@
+.logo {
+  font-size: 32px;
+  line-height: 38px;
+  color: #f8ce1e;
+  position: relative;
+  width: fit-content;
+}
+.logo::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  right: 0;
+  height: 2px;
+  width: 100%;
+  background-color: #f8ce1e;
+}
