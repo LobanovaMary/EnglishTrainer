@@ -2,7 +2,7 @@ import React from 'react';
 import classes from './Header.module.css';
 import Container from '../Container/Container';
 import Logo from '../Logo/Logo';
-import Controls from '../Controls/Controls';
+import Navigation from '../Navigation/Navigation';
 
 import SearchInput from '../SearchInput/SearchInput';
 
@@ -12,7 +12,7 @@ const Header = props => {
       <Container class={'header__container'}>
         <Logo />
         <SearchInput />
-        <Controls />
+        <Navigation />
       </Container>
     </header>
   );
