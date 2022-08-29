@@ -1,0 +1,30 @@
+.result {
+  position: absolute;
+  width: calc(100% - 2px);
+  background-color: #d6e9f5;
+  top: 20px;
+  left: 1px;
+  z-index: -1;
+  padding: 30px 10px 20px 10px;
+  opacity: 1;
+}
+.list__item {
+  list-style: none;
+  font-size: 22px;
+  line-height: 26px;
+  color: #2c2b29;
+  padding: 1px 10px 3px 10px;
+}
+.list__item:not(:last-child) {
+  margin-bottom: 3px;
+}
+
+.list__item:hover {
+  cursor: pointer;
+  background-color: hsl(203, 61%, 80%);
+}
+.hidden {
+  width: 0px;
+  height: 0px;
+  opacity: 0;
+}

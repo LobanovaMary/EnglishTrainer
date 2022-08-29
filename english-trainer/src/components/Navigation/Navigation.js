@@ -1,7 +1,7 @@
 import React from 'react';
 import classes from './Navigation.module.css';
 
-const Controls = props => {
+const Controls = (props) => {
   return (
     <div className={classes.controls__container}>
       <a href="#" className={classes.link}>
@@ -10,7 +10,6 @@ const Controls = props => {
       <a href="#" className={classes.link}>
         Тренировка
       </a>
-      ;
     </div>
   );
 };
