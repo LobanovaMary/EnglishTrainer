@@ -3,11 +3,14 @@
   gap: 30px;
 }
 .link {
-  font-family: 'Bitter';
   font-style: normal;
-  font-weight: 500;
+  font-weight: 400;
   font-size: 24px;
   line-height: 26px;
   color: #ffffff;
   text-decoration: none;
+  transition: all 0.3s;
+}
+.link:hover {
+  color: rgba(248, 206, 30, 0.95);
 }

@@ -1,0 +1,9 @@
+.img__container {
+  background-color: #d6e9f5;
+  width: 128px;
+  height: 96px;
+}
+
+.img {
+  height: 100%;
+}

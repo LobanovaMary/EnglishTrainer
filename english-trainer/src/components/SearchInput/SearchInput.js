@@ -21,6 +21,7 @@ const SearchInput = (props) => {
       const dateArr = taskText[0].meanings.map((el) => {
         return {
           id: el.id,
+          word: searchWord,
           imageUrl: el.imageUrl,
           soundUrl: el.soundUrl,
           transcription: el.transcription,
@@ -51,6 +52,7 @@ const SearchInput = (props) => {
   const cleanData = () => {
     setData([]);
     setIsVisible(false);
+    setSearchWord('');
   };
 
   return (
@@ -59,6 +61,7 @@ const SearchInput = (props) => {
         className={classes.input}
         placeholder={'Введите слово'}
         onChange={searchWordChangeHandler}
+        value={searchWord}
       />
       <SearchResult
         data={data}

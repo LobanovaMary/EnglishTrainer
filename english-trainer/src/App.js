@@ -1,10 +1,12 @@
 import {Fragment} from 'react';
-import Layout from './components/Layout/Header';
+import Header from './components/Layout/Header';
+import Dictionary from './components/Dictionary/Dictionary';
 
 function App() {
   return (
     <Fragment>
-      <Layout />
+      <Header />
+      <Dictionary />
     </Fragment>
   );
 }
