@@ -1,13 +1,21 @@
-import {Fragment} from 'react';
+// import {Fragment} from 'react';
+
+import {BrowserRouter as Router, Route, Routes, Navigate} from 'react-router-dom';
+
 import Header from './components/Layout/Header';
-import Dictionary from './components/Dictionary/Dictionary';
+import Dictionary from './pages/Dictionary';
+import Train from './pages/Train';
 
 function App() {
   return (
-    <Fragment>
+    <Router>
       <Header />
-      <Dictionary />
-    </Fragment>
+      <Routes>
+        <Route path="/dictionary" exact element={<Dictionary />} />
+        <Route path="/train" element={<Train />} />
+        <Route path="*" element={<Navigate to="/dictionary" replace />} />
+      </Routes>
+    </Router>
   );
 }
 

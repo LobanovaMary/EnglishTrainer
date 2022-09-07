@@ -3,4 +3,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  font-size: 22px;
+  line-height: 26px;
+  color: #2c2b29;
 }

@@ -1,15 +1,24 @@
 import React from 'react';
+import {NavLink} from 'react-router-dom';
 import classes from './Navigation.module.css';
 
 const Controls = (props) => {
   return (
     <div className={classes.controls__container}>
-      <a href="#" className={classes.link}>
+      <NavLink
+        exact
+        to="/dictionary"
+        className={({isActive}) => (isActive ? `${classes.active}` : `${classes.link}`)}
+      >
         Словарь
-      </a>
-      <a href="#" className={classes.link}>
+      </NavLink>
+      <NavLink
+        exact
+        to="/train"
+        className={({isActive}) => (isActive ? `${classes.active}` : `${classes.link}`)}
+      >
         Тренировка
-      </a>
+      </NavLink>
     </div>
   );
 };

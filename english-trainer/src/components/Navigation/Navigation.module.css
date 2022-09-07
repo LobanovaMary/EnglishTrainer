@@ -2,15 +2,51 @@
   display: flex;
   gap: 30px;
 }
-.link {
+.controls__container > *:hover {
+  color: rgba(248, 206, 30, 0.95);
+}
+.controls__container > * {
   font-style: normal;
   font-weight: 400;
-  font-size: 24px;
+  font-size: 26px;
   line-height: 26px;
   color: #ffffff;
   text-decoration: none;
-  transition: all 0.3s;
+  transition: all 0.2s;
+  padding: 5px 5px;
+  position: relative;
 }
-.link:hover {
+.link::after {
+  position: absolute;
+  content: '';
+  width: 0%;
+  height: 2px;
+  background-color: rgba(248, 206, 30, 0.95);
+  left: 0;
+  bottom: 0;
+}
+
+.active {
   color: rgba(248, 206, 30, 0.95);
+}
+
+.active::after {
+  position: absolute;
+  content: '';
+  height: 2px;
+  width: 100%;
+  background-color: rgba(248, 206, 30, 0.95);
+  left: 0;
+  bottom: 0;
+  animation-name: wide;
+  animation-duration: 0.7s;
+}
+
+@keyframes wide {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
 }

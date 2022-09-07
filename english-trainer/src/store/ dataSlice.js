@@ -7,7 +7,7 @@ const dataSlice = createSlice({
   },
   reducers: {
     addItem: (state, action) => {
-      state.data.push(action.payload);
+      state.data.unshift(action.payload);
     },
     removeItem: (state) => {
       state.data -= 1;

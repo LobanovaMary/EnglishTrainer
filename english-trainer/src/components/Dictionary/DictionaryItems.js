@@ -1,6 +1,6 @@
 import React from 'react';
 import {useSelector} from 'react-redux';
-import SoundButton from '../UI/SoundButtton';
+import SoundButton from '../UI/SoundIcon';
 import Word from './Word';
 import WordImg from './WordImg';
 import RemoveIcon from '../UI/RemoveIcon';
