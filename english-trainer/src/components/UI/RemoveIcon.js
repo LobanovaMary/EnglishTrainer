@@ -3,7 +3,7 @@ import classes from './Icon.module.css';
 
 const RemoveIcon = (props) => {
   return (
-    <div className={classes.icon}>
+    <div className={classes.icon} title="Удалить слово">
       <svg
         width="30"
         height="30"

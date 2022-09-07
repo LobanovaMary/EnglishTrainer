@@ -5,6 +5,7 @@ import Word from './Word';
 import WordImg from './WordImg';
 import RemoveIcon from '../UI/RemoveIcon';
 import classes from './DictionaryItems.module.css';
+import Status from './Status';
 
 const DictionaryItems = (props) => {
   const data = useSelector((state) => state.dictionary.data);
@@ -16,6 +17,7 @@ const DictionaryItems = (props) => {
           <Word word={el.word} transcription={el.transcription} />
           <p className={classes.translation}>{el.translation}</p>
           <WordImg src={el.imageUrl} alt={el.word} />
+          <Status status={el.status} />
           <RemoveIcon />
         </div>
       ))}

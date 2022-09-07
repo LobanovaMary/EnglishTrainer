@@ -26,6 +26,7 @@ const SearchInput = (props) => {
           soundUrl: el.soundUrl,
           transcription: el.transcription,
           translation: el.translation.text,
+          status: 'Не изучено',
         };
       });
       setData(dateArr);

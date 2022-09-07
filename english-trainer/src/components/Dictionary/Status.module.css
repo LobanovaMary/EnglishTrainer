@@ -1,0 +1,7 @@
+.status {
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+  background-color: #46464994;
+  box-shadow: 0 0 5px #46464994;
+}

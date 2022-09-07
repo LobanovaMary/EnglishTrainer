@@ -1,6 +1,6 @@
 .item__wrapper {
   display: grid;
-  grid-template-columns: 35px repeat(3, 1fr) 35px;
+  grid-template-columns: 35px repeat(4, 1fr) 35px;
   grid-template-rows: 100px;
   align-items: center;
   justify-content: center;
