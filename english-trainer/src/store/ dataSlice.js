@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, current } from "@reduxjs/toolkit";
 
 const list =
   localStorage.getItem("date") !== null
@@ -16,8 +16,15 @@ const dataSlice = createSlice({
       state.data.unshift(action.payload);
       localStorage.setItem("date", JSON.stringify(state.data));
     },
-    removeItem: (state) => {
-      state.data -= 1;
+    removeItem: (state, action) => {
+      console.log(action.payload);
+      const arr = current(state.data);
+      const newArr = [];
+      arr.forEach((el) => {
+        if (el.id !== +action.payload) newArr.unshift(el);
+      });
+      state.data = newArr;
+      localStorage.setItem("date", JSON.stringify(state.data));
     },
   },
 });

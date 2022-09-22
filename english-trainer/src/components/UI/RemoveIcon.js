@@ -1,9 +1,18 @@
-import React from 'react';
-import classes from './Icon.module.css';
+import React from "react";
+import { useDispatch } from "react-redux";
+import { removeItem } from "../../store/ dataSlice";
+import classes from "./Icon.module.css";
 
 const RemoveIcon = (props) => {
+  const dispatch = useDispatch();
+
+  const remove = (event) => {
+    const id = event.currentTarget.closest("div[data-id]").dataset.id;
+    dispatch(removeItem(id));
+  };
+
   return (
-    <div className={classes.icon} title="Удалить слово">
+    <div onClick={remove} className={classes.icon} title="Удалить слово">
       <svg
         width="30"
         height="30"
