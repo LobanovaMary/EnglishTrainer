@@ -1,6 +1,11 @@
 // import {Fragment} from 'react';
 
-import {BrowserRouter as Router, Route, Routes, Navigate} from 'react-router-dom';
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  Navigate,
+} from 'react-router-dom';
 
 import Header from './components/Layout/Header';
 import Dictionary from './pages/Dictionary';
@@ -11,9 +16,9 @@ function App() {
     <Router>
       <Header />
       <Routes>
-        <Route path="/dictionary" exact element={<Dictionary />} />
-        <Route path="/train" element={<Train />} />
-        <Route path="*" element={<Navigate to="/dictionary" replace />} />
+        <Route path='/dictionary' element={<Dictionary />} exact='true' />
+        <Route path='/train' element={<Train />} />
+        <Route path='*' element={<Navigate to='/dictionary' replace />} />
       </Routes>
     </Router>
   );

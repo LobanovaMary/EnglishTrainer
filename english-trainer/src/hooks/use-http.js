@@ -1,4 +1,4 @@
-import {useState, useCallback} from 'react';
+import { useState, useCallback } from 'react';
 
 const useHttp = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -15,14 +15,14 @@ const useHttp = () => {
       });
 
       if (!response.ok) {
-        throw new Error('Request failed!');
+        throw new Error('Что-то пошло не так...');
       }
 
       const data = await response.json();
 
       applyData(data);
     } catch (err) {
-      setError(err.message || 'Something went wrong!');
+      setError('Ничего не найдено' || 'Что-то пошло не так...');
     }
     setIsLoading(false);
   }, []);

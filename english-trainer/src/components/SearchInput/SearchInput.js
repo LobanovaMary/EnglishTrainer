@@ -1,22 +1,24 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import Button from '../UI/Button';
 import SearchResult from './SearchResult';
 import useHttp from '../../hooks/use-http';
+import Loading from '../Loading/Loading';
 
 import classes from './SearchInput.module.css';
 
 const SearchInput = (props) => {
   const [searchWord, setSearchWord] = useState('');
   const [data, setData] = useState([]);
-  const {isLoading, error, sendRequest: sendTaskRequest} = useHttp();
-  const [resultError, setResultError] = useState('');
+  const { isLoading, error, sendRequest: sendTaskRequest } = useHttp();
+  const [resultError, setResultError] = useState(null);
   const [isVisible, setIsVisible] = useState(false);
 
   const searchWordChangeHandler = (event) => {
+    // TODO: setTimeout with delay search
     setSearchWord(event.target.value);
   };
 
-  const createSearchResalt = (taskText) => {
+  const createSearchResult = (taskText) => {
     if (taskText[0].text === searchWord.toLowerCase()) {
       const dateArr = taskText[0].meanings.map((el) => {
         return {
@@ -30,6 +32,7 @@ const SearchInput = (props) => {
         };
       });
       setData(dateArr);
+      setResultError(null);
     } else {
       setResultError('Ничего не найдено');
     }
@@ -37,20 +40,23 @@ const SearchInput = (props) => {
 
   const submitHandler = (event) => {
     event.preventDefault();
-    setIsVisible(true);
+    setIsVisible(false);
+    setResultError(null);
 
     if (searchWord) {
       setData([]);
+      setIsVisible(true);
       sendTaskRequest(
         {
           url: `https://dictionary.skyeng.ru/api/public/v1/words/search?search=${searchWord}`,
         },
-        createSearchResalt.bind(null)
+        createSearchResult.bind(null)
       );
     }
   };
 
   const cleanData = () => {
+    console.log('blur epta');
     setData([]);
     setIsVisible(false);
     setSearchWord('');
@@ -64,6 +70,7 @@ const SearchInput = (props) => {
         onChange={searchWordChangeHandler}
         value={searchWord}
       />
+
       <SearchResult
         data={data}
         resultError={resultError}
@@ -72,8 +79,9 @@ const SearchInput = (props) => {
         onClean={cleanData}
       >
         {error && <p>{error}</p>}
-        {isLoading && <p>{'Loading...'}</p>}
+        {isLoading && <Loading />}
       </SearchResult>
+
       <Button text={'Найти'} />
     </form>
   );

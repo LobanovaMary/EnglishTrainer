@@ -1,6 +1,6 @@
 import React from 'react';
-import {useDispatch} from 'react-redux';
-import {addItem} from '../../store/ dataSlice';
+import { useDispatch } from 'react-redux';
+import { addItem } from '../../store/ dataSlice';
 
 import classes from './SearchResult.module.css';
 
@@ -35,7 +35,11 @@ const SearchResult = (props) => {
   return (
     <div className={props.isVisible ? classes.result : classes.hidden}>
       {props.children}
-      {!!props.data.length && renderSearchList()}
+      {props.resultError ? (
+        <p>{props.resultError}</p>
+      ) : (
+        !!props.data.length && renderSearchList()
+      )}
     </div>
   );
 };

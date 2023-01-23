@@ -28,3 +28,9 @@
   height: 0px;
   opacity: 0;
 }
+.result > p {
+  font-size: 22px;
+  line-height: 26px;
+  color: #2c2b29;
+  padding: 1px 10px 3px 10px;
+}
