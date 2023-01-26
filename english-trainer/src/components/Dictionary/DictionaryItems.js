@@ -1,11 +1,11 @@
-import React from "react";
-import { useSelector } from "react-redux";
-import SoundButton from "../UI/SoundIcon";
-import Word from "./Word";
-import WordImg from "./WordImg";
-import RemoveIcon from "../UI/RemoveIcon";
-import classes from "./DictionaryItems.module.css";
-import Status from "./Status";
+import React from 'react';
+import { useSelector } from 'react-redux';
+import SoundButton from '../UI/SoundIcon';
+import Word from './Word';
+import WordImg from './WordImg';
+import RemoveIcon from '../UI/RemoveIcon';
+import classes from './DictionaryItems.module.css';
+import Status from './Status';
 
 const DictionaryItems = (props) => {
   const data = useSelector((state) => state.dictionary.data);

@@ -3,6 +3,9 @@ import Wrapper from '../components/Wrapper/Wrapper';
 import DictionaryItems from '../components/Dictionary/DictionaryItems';
 import DictionaryHeader from '../components/Dictionary/DictionaryHeader';
 import { useSelector } from 'react-redux';
+
+import DictionaryTitle from '../components/Dictionary/DictionaryTitle';
+
 const Dictionary = (props) => {
   const data = useSelector((state) => state.dictionary.data);
 
@@ -10,7 +13,7 @@ const Dictionary = (props) => {
     <Wrapper>
       <DictionaryHeader />
       {data.length === 0 ? (
-        <h2>Список пуст. Добавте слово в словарь</h2>
+        <DictionaryTitle title='Список пуст. Добавьте слово' />
       ) : (
         <DictionaryItems />
       )}

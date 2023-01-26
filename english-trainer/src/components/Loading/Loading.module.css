@@ -13,7 +13,7 @@
   height: 30px;
   border: 3px solid transparent;
   border-radius: 50%;
-  border-right-color: rgb(45, 157, 232);
+  border-right-color: #2d9de8;
   animation: spinner-anim 0.8s linear infinite;
 }
 

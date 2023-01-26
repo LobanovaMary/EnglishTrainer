@@ -7,3 +7,11 @@
   align-items: center;
   justify-content: space-evenly;
 }
+.select {
+  border-radius: 5px;
+  padding: 7px 5px 7px 5px;
+  font-size: 16px;
+  outline: none;
+  background: #ecf7fe;
+  border: 1px solid #7fbce6;
+}

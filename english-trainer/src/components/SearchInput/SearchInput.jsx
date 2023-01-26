@@ -14,22 +14,24 @@ const SearchInput = (props) => {
   const [isVisible, setIsVisible] = useState(false);
 
   const searchWordChangeHandler = (event) => {
-    // TODO: setTimeout with delay search
     setSearchWord(event.target.value);
   };
 
   const createSearchResult = (taskText) => {
     if (taskText[0].text === searchWord.toLowerCase()) {
-      const dateArr = taskText[0].meanings.map((el) => {
-        return {
-          id: el.id,
-          word: searchWord,
-          imageUrl: el.imageUrl,
-          soundUrl: el.soundUrl,
-          transcription: el.transcription,
-          translation: el.translation.text,
-          status: 'Не изучено',
-        };
+      const dateArr = [];
+      taskText[0].meanings.forEach((el) => {
+        if (!dateArr.find((obj) => obj.translation === el.translation.text))
+          dateArr.push({
+            id: el.id,
+            word: searchWord,
+            imageUrl: el.imageUrl,
+            soundUrl: el.soundUrl,
+            transcription: el.transcription,
+            translation: el.translation.text,
+            time: new Date().toLocaleString().split(','),
+            status: 'Не изучено',
+          });
       });
       setData(dateArr);
       setResultError(null);

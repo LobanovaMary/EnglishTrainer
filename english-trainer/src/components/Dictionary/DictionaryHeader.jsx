@@ -6,9 +6,9 @@ const DictionaryHeader = (props) => {
   return (
     <div className={classes.wrapper}>
       <InputFindField />
-      <select name='filter'>
+      <select className={classes.select} name='filter'>
         <option>Недавно добавленные</option>
-        <option>Сначало старые</option>
+        <option>Сначала старые</option>
         <option>Слова на изучении</option>
         <option>Выученые слова</option>
       </select>
