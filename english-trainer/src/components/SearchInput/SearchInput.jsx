@@ -23,7 +23,7 @@ const SearchInput = (props) => {
       taskText[0].meanings.forEach((el) => {
         if (!dateArr.find((obj) => obj.translation === el.translation.text))
           dateArr.push({
-            id: el.id,
+            id: Date.now(),
             word: searchWord,
             imageUrl: el.imageUrl,
             soundUrl: el.soundUrl,
@@ -58,7 +58,6 @@ const SearchInput = (props) => {
   };
 
   const cleanData = () => {
-    console.log('blur epta');
     setData([]);
     setIsVisible(false);
     setSearchWord('');

@@ -5,17 +5,27 @@ import DictionaryHeader from '../components/Dictionary/DictionaryHeader';
 import { useSelector } from 'react-redux';
 
 import DictionaryTitle from '../components/Dictionary/DictionaryTitle';
+import { useState } from 'react';
 
 const Dictionary = (props) => {
+  const [selectorSort, setSelectorSort] = useState('newWord');
+
   const data = useSelector((state) => state.dictionary.data);
 
+  const selectFilter = (value) => {
+    setSelectorSort(value);
+    console.log(value);
+  };
   return (
     <Wrapper>
-      <DictionaryHeader />
+      <DictionaryHeader
+        filterSelect={selectFilter}
+        valueSelect={selectorSort}
+      />
       {data.length === 0 ? (
         <DictionaryTitle title='Список пуст. Добавьте слово' />
       ) : (
-        <DictionaryItems />
+        <DictionaryItems data={data} />
       )}
     </Wrapper>
   );

@@ -20,7 +20,7 @@ const SearchResult = (props) => {
           return (
             <li
               className={classes.list__item}
-              key={item.id}
+              key={item.id + index}
               data-id={`${index}`}
               onClick={clickHandler}
             >
