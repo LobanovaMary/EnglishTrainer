@@ -9,6 +9,7 @@ import Status from './Status';
 
 const DictionaryItems = (props) => {
   const data = props.data;
+  //! add message about not find item
   return (
     <React.Fragment>
       {data.map((el) => (

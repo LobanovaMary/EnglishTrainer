@@ -12,3 +12,8 @@
   line-height: 26px;
   color: #2c2b29;
 }
+@media (max-width: 1150px) {
+  .item__wrapper {
+    grid-template-columns: 35px repeat(3, 1fr) 40px 35px;
+  }
+}
